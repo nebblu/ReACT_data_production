@@ -146,27 +146,6 @@ omch2nonu=`awk 'NR=='${iteration}' {print '${omcdmnonu}'*'${smallh}'*'${smallh}'
 
 
 
-#edit LCDM  camb .ini file with relevant params
-sed -i "s/omch2 =/omch2 = ${omch2}/g" mgcamb_lcdm_params_$iteration.ini
-sed -i "s/ombh2 =/ombh2 = ${ombh2}/g" mgcamb_lcdm_params_$iteration.ini
-sed -i "s/omnuh2 =/omnuh2 = ${omnuh2}/g" mgcamb_lcdm_params_$iteration.ini
-sed -i "s/hubble =/hubble = ${hubble}/g" mgcamb_lcdm_params_$iteration.ini
-sed -i "s/scalar_spectral_index(1) =/scalar_spectral_index(1) = ${ns}/g" mgcamb_lcdm_params_$iteration.ini
-sed -i "s/scalar_amp(1) =/scalar_amp(1) = ${As}/g" mgcamb_lcdm_params_$iteration.ini
-sed -i "s/transfer_num_redshifts =/transfer_num_redshifts = ${nz}/g" mgcamb_lcdm_params_$iteration.ini
-
-#edit LCDM without massive neutrinos (for ratio) camb .ini file with relevant params
-# Note we compute this at z=0 because we can just rescale using LCDM growth in HMCode
-sed -i "s/omch2 =/omch2 = ${omch2nonu}/g" mgcamb_lcdm_nonu_params_$iteration.ini
-sed -i "s/ombh2 =/ombh2 = ${ombh2}/g" mgcamb_lcdm_nonu_params_$iteration.ini
-sed -i "s/hubble =/hubble = ${hubble}/g" mgcamb_lcdm_nonu_params_$iteration.ini
-sed -i "s/scalar_spectral_index(1) =/scalar_spectral_index(1) = ${ns}/g" mgcamb_lcdm_nonu_params_$iteration.ini
-sed -i "s/scalar_amp(1) =/scalar_amp(1) = ${As}/g" mgcamb_lcdm_nonu_params_$iteration.ini
-
-
-
-
-
 # PART 2: Get linear transfers for nu-DS, nu-LCDM and LCDM cosmologies with 
 
 
